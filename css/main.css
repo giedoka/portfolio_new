@@ -114,6 +114,9 @@ body {
     margin-top: 150px;
     background-color: #5E84AA;
     padding: 40px 0; }
+    @media (min-width: 768px) {
+      body article .skills {
+        height: 600px; } }
     body article .skills h2 {
       margin: 0;
       margin-bottom: 20px;
@@ -127,6 +130,10 @@ body {
       align-items: center;
       position: relative;
       margin: 0 auto; }
+      @media (min-width: 768px) {
+        body article .skills .dots {
+          width: 400px;
+          height: 400px; } }
       body article .skills .dots .icon {
         width: 100px;
         height: 100px;
@@ -195,11 +202,25 @@ body {
         height: 70px; }
         body article .skills .dots:hover .big-dot img {
           width: 70px; }
+          @media (min-width: 768px) {
+            body article .skills .dots:hover .big-dot img {
+              width: 110px; } }
+        @media (min-width: 768px) {
+          body article .skills .dots:hover .big-dot {
+            width: 110px;
+            height: 110px; } }
       body article .skills .dots:hover .small-dot {
         width: 35px;
         height: 35px; }
         body article .skills .dots:hover .small-dot img {
           width: 35px; }
+          @media (min-width: 768px) {
+            body article .skills .dots:hover .small-dot img {
+              width: 55px; } }
+        @media (min-width: 768px) {
+          body article .skills .dots:hover .small-dot {
+            width: 55px;
+            height: 55px; } }
       body article .skills .dots:hover .icon {
         width: 30px;
         height: 30px; }
@@ -213,6 +234,11 @@ body {
         top: -webkit-calc(50% - 35px);
         top: -moz-calc(50% - 35px);
         top: calc(50% - 35px); }
+        @media (min-width: 768px) {
+          body article .skills .dots:hover .left-dot {
+            top: -webkit-calc(50% - 55px);
+            top: -moz-calc(50% - 55px);
+            top: calc(50% - 55px); } }
       body article .skills .dots:hover .bottom-left-dot {
         left: 15px;
         bottom: 15px; }
@@ -221,6 +247,11 @@ body {
         left: -moz-calc(50% - 35px);
         left: calc(50% - 35px);
         bottom: 0; }
+        @media (min-width: 768px) {
+          body article .skills .dots:hover .bottom-dot {
+            left: -webkit-calc(50% - 55px);
+            left: -moz-calc(50% - 55px);
+            left: calc(50% - 55px); } }
       body article .skills .dots:hover .bottom-right-dot {
         right: 15px;
         bottom: 15px; }
@@ -229,6 +260,11 @@ body {
         top: -webkit-calc(50% - 35px);
         top: -moz-calc(50% - 35px);
         top: calc(50% - 35px); }
+        @media (min-width: 768px) {
+          body article .skills .dots:hover .right-dot {
+            top: -webkit-calc(50% - 55px);
+            top: -moz-calc(50% - 55px);
+            top: calc(50% - 55px); } }
       body article .skills .dots:hover .top-right-dot {
         right: 15px;
         top: 15px; }
@@ -237,6 +273,11 @@ body {
         left: -webkit-calc(50% - 35px);
         left: -moz-calc(50% - 35px);
         left: calc(50% - 35px); }
+        @media (min-width: 768px) {
+          body article .skills .dots:hover .top-dot {
+            left: -webkit-calc(50% - 55px);
+            left: -moz-calc(50% - 55px);
+            left: calc(50% - 55px); } }
   body article .portfolio .projects {
     margin: 0 auto; }
     body article .portfolio .projects .single-project {
@@ -254,8 +295,13 @@ body {
       box-shadow: 0 0 10px 1px #bdc3c7;
       margin: 5px auto;
       position: relative; }
+      @media (min-width: 425px) {
+        body article .portfolio .projects .single-project {
+          height: 250px;
+          width: 400px; } }
       body article .portfolio .projects .single-project img {
-        width: 95%; }
+        width: 95%;
+        max-height: 80%; }
       body article .portfolio .projects .single-project:hover .show {
         visibility: visible;
         opacity: 1; }
@@ -323,7 +369,7 @@ body {
       body article .hobby .color-cover a {
         text-decoration: none;
         color: #ffffff;
-        padding: 5px 10px;
+        padding: 7px 12px;
         border-radius: 15px;
         background-color: #1abc9c;
         margin-top: 10px;

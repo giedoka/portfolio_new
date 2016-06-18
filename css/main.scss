@@ -170,6 +170,9 @@ body {
             margin-top: 150px;
             background-color: #5E84AA;
             padding: 40px 0;
+            @media(min-width: 768px) {
+                height: 600px;
+            }
             h2 {
                 margin: 0;
                 margin-bottom: 20px;
@@ -184,6 +187,10 @@ body {
                 align-items: center;
                 position: relative;
                 margin: 0 auto;
+                @media(min-width: 768px) {
+                    width: 400px;
+                    height: 400px;
+                }
                 .icon {
                     width: 100px;
                     height: 100px;
@@ -244,6 +251,13 @@ body {
                     height: $bigDotSize;
                     img {
                         width: $bigDotSize;
+                            @media(min-width: 768px) {
+                            width: 110px;
+                        }
+                    }
+                    @media(min-width: 768px) {
+                        width: 110px;
+                        height: 110px;
                     }
                 }
                 &:hover .small-dot {
@@ -251,6 +265,13 @@ body {
                     height: $smallDotSize;
                     img {
                         width: $smallDotSize;
+                        @media(min-width: 768px) {
+                            width: 55px;
+                        }
+                    }
+                    @media(min-width: 768px) {
+                        width: 55px;
+                        height: 55px;
                     }
                 }
                 &:hover .icon {
@@ -269,6 +290,11 @@ body {
                     top: -webkit-calc(50% - 35px);
                     top: -moz-calc(50% - 35px);
                     top: calc(50% - 35px);
+                    @media(min-width: 768px) {
+                        top: -webkit-calc(50% - 55px);
+                        top: -moz-calc(50% - 55px);
+                        top: calc(50% - 55px);
+                    }
                 }
                 &:hover .bottom-left-dot {
                     left: 15px;
@@ -278,6 +304,11 @@ body {
                     left:-webkit-calc(50% - 35px);
                     left:-moz-calc(50% - 35px);
                     left:calc(50% - 35px);
+                    @media(min-width: 768px) {
+                        left:-webkit-calc(50% - 55px);
+                        left:-moz-calc(50% - 55px);
+                        left:calc(50% - 55px);
+                    }
                     bottom: 0;
                 }
                 &:hover .bottom-right-dot {
@@ -289,6 +320,11 @@ body {
                     top: -webkit-calc(50% - 35px);
                     top: -moz-calc(50% - 35px);
                     top: calc(50% - 35px);
+                    @media(min-width: 768px) {
+                        top: -webkit-calc(50% - 55px);
+                        top: -moz-calc(50% - 55px);
+                        top: calc(50% - 55px);
+                    }
                 }
                 &:hover .top-right-dot {
                     right: 15px;
@@ -299,6 +335,11 @@ body {
                     left:-webkit-calc(50% - 35px);
                     left:-moz-calc(50% - 35px);
                     left:calc(50% - 35px);
+                    @media(min-width: 768px) {
+                        left:-webkit-calc(50% - 55px);
+                        left:-moz-calc(50% - 55px);
+                        left:calc(50% - 55px);
+                    }
                 }
             }
         }
@@ -314,8 +355,13 @@ body {
                     box-shadow: 0 0 10px 1px $greyColor;
                     margin: 5px auto;
                     position: relative;
+                    @media(min-width: 425px) {
+                        height: 250px;
+                        width: 400px;
+                    }
                     img {
                         width: 95%;
+                        max-height: 80%;
                     }
                     &:hover {
                         .show {
@@ -381,7 +427,7 @@ body {
                 a {
                     text-decoration: none;
                     color: $whiteColor;
-                    padding: 5px 10px;
+                    padding: 7px 12px;
                     border-radius: 15px;
                     background-color: $turquoiseColor;
                     margin-top: 10px;
