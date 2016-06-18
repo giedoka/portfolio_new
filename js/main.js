@@ -17,6 +17,7 @@ function openNav() {
         middleLine.toggleClass('middle-line-close');
         bottomLine.toggleClass('bottom-line-close');
         $('header nav ul').toggleClass('nav-open');
+        $('nav').toggleClass('not-on-top-nav-open');
     });
 }
 
@@ -32,9 +33,11 @@ function avatarMove() {
     $(window).scroll(function() {
         if($(window).scrollTop() > topOfOthDiv) {
             $("header img").addClass('move');
+            $("nav").addClass('not-on-top');
         }
         else {
             $("header img").removeClass('move');
+            $("nav").removeClass('not-on-top');
         }
     });
 }

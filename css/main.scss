@@ -31,11 +31,7 @@ $smallDotSize: 35px;
         height: 130px;
     }
 }
-* {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
+
 html {
     font-size: 62.5%;
     margin: 0 auto;
@@ -93,10 +89,22 @@ body {
             }
         }
         nav {
-            background-color: #ffffff;
+            background-color: $whiteColor;
             position: absolute;
             z-index: 99999;
             width: 100%;
+            &.not-on-top {
+                position: fixed;
+                margin: 0 auto;
+                background-color: transparent;
+                z-index: 9999999;
+                .hamburger {
+                    margin-top: 25px;
+                }
+            }
+            &.not-on-top-nav-open {
+                background-color: $whiteColor;
+            }
             ul {
                 list-style-type: none;
                 padding: 0;
@@ -120,7 +128,7 @@ body {
                 margin: 0 auto;
                 .line {
                     @include transition(.7s, ease-in-out);
-                    margin: 6px;
+                    margin: 6px 0;
                     width: 25px;
                     height: 2px;
                     background-color: $orangeColor;
