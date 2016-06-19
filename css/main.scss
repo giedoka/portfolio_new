@@ -83,6 +83,7 @@ body {
                 bottom: -100px;
                 left: calc(50% - 75px);
                 &.move {
+                    -webkit-transform: translateZ(0);
                     position: fixed;
                     top: -70px;
                 }
@@ -368,7 +369,7 @@ body {
                         width: 400px;
                     }
                     img {
-                        width: 95%;
+                        max-width: 95%;
                         max-height: 80%;
                     }
                     &:hover {

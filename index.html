@@ -56,8 +56,8 @@
             </div>
             <div class="portfolio" ng-controller="portfolioController as portfolio">
                 <h2>Projekty</h2>
-                <div class="projects" ng-repeat="project in portfolio.projects">
-                    <div class="single-project">
+                <div class="projects">
+                    <div class="single-project" ng-repeat="project in portfolio.projects">
                         <div class="show">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 97.083 97.083" style="enable-background:new 0 0 97.083 97.083;" xml:space="preserve">
                                 <g>
@@ -118,9 +118,9 @@
                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et lobortis dolor, ut fringilla ligula. Suspendisse potenti. Nullam in nisi et orci venenatis eleifend.
             </p>
         </aside>
-        <script src="js/jquery-1.11.3.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/angular.min.js"></script>
-        <script src="js/app.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script src="js/main.js" async></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" async></script>
+        <script src="js/app.js" async></script>
     </body>
 </html>
