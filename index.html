@@ -9,7 +9,7 @@
     </head>
     <body ng-app="portfolio">
         <header>
-            <nav>
+            <nav class="top-nav">
                 <div class="hamburger">
                     <div class="line top-line"></div>
                     <div class="line middle-line"></div>
@@ -28,6 +28,22 @@
                     <p>Senior Loglan Developer</p>
                 </div>
                 <img src="img/avatar.svg" alt="Avatar">
+                <nav class="avatar-nav">
+                    <ul>
+                        <li>O mnie</li>
+                        <li>Umiejętności</li>
+                        <li>Projekty</li>
+                        <li>Kontakt</li>
+                    </ul>
+                    <div class="avatar-wrapper">
+                        <img src="img/avatar.svg" alt="Avatar">
+                        <div class="hamburger">
+                            <div class="line top-line"></div>
+                            <div class="line middle-line"></div>
+                            <div class="line bottom-line"></div>
+                        </div>
+                    </div>
+                </nav>
             </div>
         </header>
         <article>
@@ -59,7 +75,7 @@
                 <div class="projects">
                     <div class="single-project" ng-repeat="project in portfolio.projects">
                         <div class="show">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 97.083 97.083" style="enable-background:new 0 0 97.083 97.083;" xml:space="preserve">
+                            <svg class="info-icon" ng-click="showInfo=true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 97.083 97.083" style="enable-background:new 0 0 97.083 97.083;" xml:space="preserve">
                                 <g>
                                     <g>
                                         <path d="M62.079,83.595h-5.137V30.29c0-1.104-0.896-2-2-2H35.005c-1.104,0-2,0.896-2,2v6.685c0,1.104,0.896,2,2,2h5.646v44.62    h-5.137c-1.104,0-2,0.896-2,2v9.488c0,1.104,0.896,2,2,2h26.564c1.104,0,2-0.896,2-2v-9.488    C64.079,84.491,63.185,83.595,62.079,83.595z"/>
@@ -68,7 +84,7 @@
                                 </g>
                             </svg>
                             <a ng-href="{{project.link}}">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
                                     <g>
                                         <g id="Link">
                                             <g>
@@ -80,6 +96,16 @@
                             </a>
                         </div>
                         <img ng-src="{{project.images[0]}}" alt="Projekt">
+                        <div ng-show="showInfo" class="project-info">
+                            <div class="close-btn" ng-click="showInfo=false">
+                                <div class="bar first-bar"></div>
+                                <div class="bar second-bar"></div>
+                            </div>
+                            <p></p>
+                            <ul>
+                                <li ng-repeat="image in portfolio.projects.images"><img ng-src="{{image}}" alt="Projekt"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -119,8 +145,8 @@
             </p>
         </aside>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        <script src="js/main.js" async></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" async></script>
-        <script src="js/app.js" async></script>
+        <script src="js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

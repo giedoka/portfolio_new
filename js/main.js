@@ -4,6 +4,8 @@ $(document).ready(function() {
     showSkillInfo();
     closeSkillInfo();
     mobileHover();
+    openAvatarNav();
+
 });
 
 var hamburger = $('.hamburger');
@@ -17,7 +19,6 @@ function openNav() {
         middleLine.toggleClass('middle-line-close');
         bottomLine.toggleClass('bottom-line-close');
         $('header nav ul').toggleClass('nav-open');
-        $('nav').toggleClass('not-on-top-nav-open');
     });
 }
 
@@ -29,15 +30,29 @@ function openNav() {
 
 function avatarMove() {
     var topOfOthDiv = $("header").offset().top + $("header").height();
-    console.log(topOfOthDiv);
     $(window).scroll(function() {
         if($(window).scrollTop() > topOfOthDiv) {
-            $("header img").addClass('move');
-            $("nav").addClass('not-on-top');
+            $(".avatar-nav").addClass('move');
+            $('.header-img>img').hide();
         }
         else {
-            $("header img").removeClass('move');
-            $("nav").removeClass('not-on-top');
+            $(".avatar-nav").removeClass('move');
+            $(".header-img>img").show();
+        }
+    });
+}
+
+function openAvatarNav() {
+    $('.avatar-nav .hamburger').click(function() {
+        if($('.avatar-nav .hamburger .top-line').hasClass('top-line-close')) {
+            $('.avatar-nav').animate({
+                top: 0
+            });
+        }
+        else {
+            $('.avatar-nav').animate({
+                top: -225
+            });
         }
     });
 }

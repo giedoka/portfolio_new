@@ -12,7 +12,8 @@ var projects = [
             'img/projects/amoney/1.png',
             'img/projects/amoney/2.png',
             'img/projects/amoney/3.png'
-        ]
+        ],
+        info: 'saofnosifnpoafnpoawncopaecfsdaasdf'
     },
     {
         name: 'Kappe',
@@ -21,7 +22,8 @@ var projects = [
             'img/projects/kappe/1.png',
             'img/projects/kappe/2.png',
             'img/projects/kappe/3.png'
-        ]
+        ],
+        info: 'saofnosifnpoafnpoawncopaecfsdaasdf'
     },
     {
         name: 'System ekspercki',
@@ -29,7 +31,8 @@ var projects = [
         images: [
             'img/projects/system-ekspercki/1.png',
             'img/projects/system-ekspercki/2.png'
-        ]
+        ],
+        info: 'saofnosifnpoafnpoawncopaecfsdaasdf'
     }
 ]
 
