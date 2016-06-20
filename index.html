@@ -101,9 +101,11 @@
                                 <div class="bar first-bar"></div>
                                 <div class="bar second-bar"></div>
                             </div>
-                            <ul>
-                                <li ng-repeat="image in project.images"><img ng-src="{{image}}" alt="Projekt"></li>
-                            </ul>
+                            <div class="project-slider">
+                                <ul>
+                                    <li ng-repeat="image in project.images"><img ng-src="{{image}}" alt="Projekt"></li>
+                                </ul>
+                            </div>
                             <h4>{{project.name}}</h4>
                             <p>{{project.info}}</p>
                         </div>
