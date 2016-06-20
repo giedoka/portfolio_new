@@ -101,10 +101,11 @@
                                 <div class="bar first-bar"></div>
                                 <div class="bar second-bar"></div>
                             </div>
-                            <p></p>
                             <ul>
-                                <li ng-repeat="image in portfolio.projects.images"><img ng-src="{{image}}" alt="Projekt"></li>
+                                <li ng-repeat="image in project.images"><img ng-src="{{image}}" alt="Projekt"></li>
                             </ul>
+                            <h4>{{project.name}}</h4>
+                            <p>{{project.info}}</p>
                         </div>
                     </div>
                 </div>
