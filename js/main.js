@@ -5,7 +5,8 @@ $(document).ready(function() {
     closeSkillInfo();
     mobileHover();
     openAvatarNav();
-
+    loadSkills();
+    //loadPortfolio();
 });
 
 var hamburger = $('.hamburger');
@@ -53,6 +54,26 @@ function openAvatarNav() {
             $('.avatar-nav').animate({
                 top: -225
             });
+        }
+    });
+}
+
+function loadSkills() {
+    var topOfAbout = $(".about").offset().top;
+    var skills = $('.skills');
+    $(window).scroll(function() {
+        if($(window).scrollTop() > topOfAbout) {
+            skills.load('skills.html');
+        }
+    });
+}
+
+function loadPortfolio() {
+    var topOfSkills = $(".skills").offset().top;
+    var portfolio = $('.portfolio');
+    $(window).scroll(function() {
+        if($(window).scrollTop() > topOfSkills) {
+            portfolio.load('projects.html');
         }
     });
 }
