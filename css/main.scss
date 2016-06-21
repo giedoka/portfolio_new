@@ -139,6 +139,7 @@ body {
                     font-size: 1.6rem;
                     text-align: center;
                     padding: 10px 0;
+                    border-bottom: 1px solid;
                     &:last-child {
                         border-bottom: none;
                     }
@@ -147,7 +148,7 @@ body {
         }
         .avatar-nav {
             position: fixed;
-            top: -225px;
+            top: -160px;
             left: 0;
             width: 100%;
             display: none;
@@ -159,9 +160,17 @@ body {
             ul {
                 background-color: $turquoiseColor;
                 width: 100%;
+                z-index: 99999;
+                li {
+                    color: $whiteColor;
+                    border-bottom-color: $whiteColor;
+                }
             }
             .avatar-wrapper {
-                position: relative;
+                position: absolute;
+                bottom: -100px;
+                left: calc(50% - 75px);
+                //top: -30px;
                 width: 150px;
                 .hamburger {
                     position: absolute;
@@ -183,7 +192,7 @@ body {
                 }
                 li {
                     color: $darkBlueColor;
-                    border-bottom: 1px $darkBlueColor solid;
+                    border-bottom-color: $darkBlueColor;
                 }
             }
             
@@ -439,6 +448,8 @@ body {
                 }
             }
             .project-info {
+                display: none;
+                //visibility: hidden;
                 background: rgba(0, 0, 0, .8);
                 position: fixed;
                 z-index: 99999999;
@@ -448,6 +459,7 @@ body {
                 width: 100%;
                 @include flexbox(column, nowrap);
                 justify-content: flex-start;
+                align-items: center;
                 @include transition(.3s, ease-in-out);
                 .close-btn {
                     position: absolute;
@@ -560,6 +572,16 @@ body {
             }
         }
         .contact {
+            svg {
+                width: 32px;
+                height: 32px;
+                padding: 5px;
+                fill: $whiteColor;
+                background-color: $darkBlueColor;
+            }
+            input {
+                height: 100%;
+            }
             input,
             textarea {
                 width: 100%;
@@ -573,7 +595,10 @@ body {
                 margin: 2.5px 0;
             }
             .input {
-
+                @include flexbox(row, nowrap);
+                align-items: center;
+                height: 32px;
+                margin-bottom: 10px;
             }
             textarea {
                 resize: none;

@@ -5,7 +5,7 @@ $(document).ready(function() {
     closeSkillInfo();
     mobileHover();
     openAvatarNav();
-    loadSkills();
+    //loadSkills();
     //loadPortfolio();
 });
 
@@ -48,12 +48,12 @@ function openAvatarNav() {
         if($('.avatar-nav .hamburger .top-line').hasClass('top-line-close')) {
             $('.avatar-nav').animate({
                 top: 0
-            });
+            },400);
         }
         else {
             $('.avatar-nav').animate({
-                top: -225
-            });
+                top: -160
+            },400);
         }
     });
 }

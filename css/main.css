@@ -92,12 +92,13 @@ body {
       body header nav ul li {
         font-size: 1.6rem;
         text-align: center;
-        padding: 10px 0; }
+        padding: 10px 0;
+        border-bottom: 1px solid; }
         body header nav ul li:last-child {
           border-bottom: none; }
   body header .avatar-nav {
     position: fixed;
-    top: -225px;
+    top: -160px;
     left: 0;
     width: 100%;
     display: none; }
@@ -112,9 +113,15 @@ body {
       align-items: center; }
     body header .avatar-nav ul {
       background-color: #1abc9c;
-      width: 100%; }
+      width: 100%;
+      z-index: 99999; }
+      body header .avatar-nav ul li {
+        color: #ffffff;
+        border-bottom-color: #ffffff; }
     body header .avatar-nav .avatar-wrapper {
-      position: relative;
+      position: absolute;
+      bottom: -100px;
+      left: calc(50% - 75px);
       width: 150px; }
       body header .avatar-nav .avatar-wrapper .hamburger {
         position: absolute;
@@ -132,7 +139,7 @@ body {
         display: block; }
       body header .top-nav ul li {
         color: #34495e;
-        border-bottom: 1px #34495e solid; }
+        border-bottom-color: #34495e; }
   body article .about {
     text-align: center;
     margin-top: 150px; }
@@ -371,6 +378,7 @@ body {
             height: 50px;
             margin: 0 20px; }
   body article .portfolio .project-info {
+    display: none;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 99999999;
@@ -386,6 +394,7 @@ body {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    align-items: center;
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out; }
@@ -490,6 +499,14 @@ body {
         body article .hobby .color-cover a:hover {
           color: #1abc9c;
           background-color: transparent; }
+  body article .contact svg {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    fill: #ffffff;
+    background-color: #34495e; }
+  body article .contact input {
+    height: 100%; }
   body article .contact input,
   body article .contact textarea {
     width: 100%;
@@ -500,6 +517,17 @@ body {
       outline-color: #e74c3c; }
   body article .contact .contact-form {
     margin: 2.5px 0; }
+  body article .contact .input {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 32px;
+    margin-bottom: 10px; }
   body article .contact textarea {
     resize: none;
     height: 150px; }
