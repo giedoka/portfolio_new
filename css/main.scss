@@ -2,6 +2,7 @@ $turquoiseColor: #1abc9c;
 $orangeColor: #e74c3c;
 $greyColor: #bdc3c7;
 $darkBlueColor: #34495e;
+$lightBlueColor: #5E84AA;
 $whiteColor: #ffffff;
 $blackColor: #000000;
 $bigDotSize: 70px;
@@ -21,6 +22,11 @@ $smallDotSize: 35px;
     flex-direction: $direction;
     flex-wrap: $wrap;
 }
+@mixin boxSizingBorderBox() {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
 @keyframes skillsAnimation {
     0% {
         width: 100px;
@@ -38,6 +44,7 @@ html {
 }
 
 body {
+    margin: 0 auto;
     .hamburger {
         cursor: pointer;
         width: 25px;
@@ -202,21 +209,29 @@ body {
         .about {
             text-align: center;
             margin-top: 150px;
+            @media(min-width: 1024px) {
+                
+            }
             h2 {
                 margin: 20px 0;
                 //font-weight: 100;
-                &.elo {
-                    color: red;
+                @media(min-width: 1024px) {
+                    font-size: 5rem;
+                    margin-bottom: 0;
                 }
             }
             p {
                 font-size: 1.4rem;
                 line-height: 2rem;
+                @media(min-width: 1024px) {
+                    padding: 100px;
+                    margin: 0 150px;
+                }
             }
         }
         .skills {
             margin-top: 150px;
-            background-color: #5E84AA;
+            background-color: $lightBlueColor;
             padding: 40px 0;
             @media(min-width: 768px) {
                 height: 600px;
@@ -392,56 +407,75 @@ body {
             }
         }
         .portfolio {
-            .projects {
+            .projects-wrapper {
                 margin: 0 auto;
-                .single-project {
-                    width: 95%;
-                    height: 200px;
-                    @include flexbox(row, nowrap);
-                    justify-content: center;
-                    align-items: center;
-                    box-shadow: 0 0 10px 1px $greyColor;
-                    margin: 5px auto;
-                    position: relative;
-                    @media(min-width: 425px) {
-                        height: 250px;
-                        width: 400px;
+                @media(min-width: 1024px) {
+                    width: 100%;
+                    height:300px;
+                    overflow:auto;
+                }
+                .projects {
+                    list-style-type: none;
+                    padding: 0;
+                    padding: 10px;
+                    @media(min-width: 1024px) {
+                        float:left;
+                        margin-right:-50em;
+                        white-space:nowrap;
                     }
-                    img {
-                        max-width: 95%;
-                        max-height: 80%;
-                    }
-                    &:hover {
-                        .show {
-                            visibility: visible;
-                            opacity: 1;
-                        }
-                    }
-
-                    .show {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgba(26, 188, 156, .8);
+                    .single-project {
+                        width: 95%;
+                        height: 200px;
                         @include flexbox(row, nowrap);
                         justify-content: center;
                         align-items: center;
-                        visibility: hidden;
-                        opacity: 0;
-                        @include transition(.3s, ease-in-out);
-                        svg {
-                            fill: $whiteColor;
-                            margin: 0 30px;
-                            width: 30px;
-                            height: 30px;
-                            cursor: pointer;
-                            &:hover {
-                                fill: $darkBlueColor;
-                                width: 50px;
-                                height: 50px;
-                                margin: 0 20px;
+                        box-shadow: 0 0 10px 1px $greyColor;
+                        margin: 5px auto;
+                        position: relative;
+                        @media(min-width: 425px) {
+                            height: 250px;
+                            width: 400px;
+                        }
+                        @media(min-width: 1024px) {
+                            float: left;
+                            margin: 0 10px;
+                        }
+                        img {
+                            max-width: 95%;
+                            max-height: 80%;
+                        }
+                        &:hover {
+                            .show {
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
+
+                        .show {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(26, 188, 156, .8);
+                            @include flexbox(row, nowrap);
+                            justify-content: center;
+                            align-items: center;
+                            visibility: hidden;
+                            opacity: 0;
+                            @include transition(.3s, ease-in-out);
+                            svg {
+                                fill: $whiteColor;
+                                margin: 0 30px;
+                                width: 30px;
+                                height: 30px;
+                                cursor: pointer;
+                                &:hover {
+                                    fill: $darkBlueColor;
+                                    width: 50px;
+                                    height: 50px;
+                                    margin: 0 20px;
+                                }
                             }
                         }
                     }
@@ -449,7 +483,7 @@ body {
             }
             .project-info {
                 display: none;
-                //visibility: hidden;
+                visibility: hidden;
                 background: rgba(0, 0, 0, .8);
                 position: fixed;
                 z-index: 99999999;
@@ -582,6 +616,8 @@ body {
             input {
                 height: 100%;
                 width: 100%;
+                border-bottom-left-radius: 20px !important;
+                border-top-left-radius: 20px !important;
             }
             input,
             textarea {
@@ -596,29 +632,39 @@ body {
                 }
             }
             .contact-form {
-                margin: 2.5px 0;
+                margin: 20px 0;
             }
             .input {
                 @include flexbox(row, nowrap);
                 align-items: center;
                 height: 32px;
-                margin-bottom: 20px;
+                //margin-bottom: 20px;
             }
             textarea {
                 resize: none;
                 height: 150px;
                 width: 100%;
+                border-top-right-radius: 2px !important;
+                border-top-left-radius: 2px !important;
+                @include boxSizingBorderBox();
+            }
+            .message {
+                margin-bottom: 0;
             }
             button {
-                width: 32px;
+                width: 100%;
                 height: 32px;
                 background: none;
                 border-radius: 0;
                 border: none;
+                background-color: $darkBlueColor;
+                border-radius: 2px;
+                margin-bottom: 10px;
+                padding: 5px 0;
                 svg {
                     height: 100%;
                     height: 100%;
-                    padding: 5px;
+                    padding: 0px;
                 }
             }
         }
@@ -694,6 +740,51 @@ body {
         p {
             font-size: 1.4rem;
             margin: 20px 30px;
+        }
+    }
+    footer {
+        @include flexbox(row, nowrap);
+        justify-content: space-between;
+        align-items: center;
+        background-color: $lightBlueColor;
+        @include boxSizingBorderBox();
+        padding: 0 10px;
+        color: $whiteColor;
+        .social {
+            list-style-type: none;
+            padding: 0;
+            .facebook-icon {
+                &:hover {
+                    svg {
+                        fill: #4c66a4;
+                        background-color: $whiteColor;
+                        border-radius: 3px;
+                    }
+                }
+            }
+            .github-icon {
+                &:hover {
+                    svg {
+                        fill: #6a006c;
+                        background-color: $whiteColor;
+                        border-radius: 100%;
+                    }
+                }
+            }
+            li {
+                display: inline;
+                margin-left: 5px;
+                cursor: pointer;
+                svg {
+                    fill: $whiteColor;
+                    width: 24px;
+                    height: 24px;
+
+                }
+            }
+        }
+        p {
+            font-size: 1.1rem;
         }
     }
 }

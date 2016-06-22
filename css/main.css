@@ -10,6 +10,7 @@ html {
   margin: 0 auto; }
 
 body {
+  margin: 0 auto;
   background-color: #ecf0f1;
   font-family: 'Lato', sans-serif;
   margin: 0 auto; }
@@ -145,11 +146,17 @@ body {
     margin-top: 150px; }
     body article .about h2 {
       margin: 20px 0; }
-      body article .about h2.elo {
-        color: red; }
+      @media (min-width: 1024px) {
+        body article .about h2 {
+          font-size: 5rem;
+          margin-bottom: 0; } }
     body article .about p {
       font-size: 1.4rem;
       line-height: 2rem; }
+      @media (min-width: 1024px) {
+        body article .about p {
+          padding: 100px;
+          margin: 0 150px; } }
   body article .skills {
     margin-top: 150px;
     background-color: #5E84AA;
@@ -318,40 +325,25 @@ body {
             left: -webkit-calc(50% - 55px);
             left: -moz-calc(50% - 55px);
             left: calc(50% - 55px); } }
-  body article .portfolio .projects {
+  body article .portfolio .projects-wrapper {
     margin: 0 auto; }
-    body article .portfolio .projects .single-project {
-      width: 95%;
-      height: 200px;
-      display: -webkit-box;
-      display: -moz-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 0 10px 1px #bdc3c7;
-      margin: 5px auto;
-      position: relative; }
-      @media (min-width: 425px) {
-        body article .portfolio .projects .single-project {
-          height: 250px;
-          width: 400px; } }
-      body article .portfolio .projects .single-project img {
-        max-width: 95%;
-        max-height: 80%; }
-      body article .portfolio .projects .single-project:hover .show {
-        visibility: visible;
-        opacity: 1; }
-      body article .portfolio .projects .single-project .show {
-        position: absolute;
-        top: 0;
-        left: 0;
+    @media (min-width: 1024px) {
+      body article .portfolio .projects-wrapper {
         width: 100%;
-        height: 100%;
-        background-color: rgba(26, 188, 156, 0.8);
+        height: 300px;
+        overflow: auto; } }
+    body article .portfolio .projects-wrapper .projects {
+      list-style-type: none;
+      padding: 0;
+      padding: 10px; }
+      @media (min-width: 1024px) {
+        body article .portfolio .projects-wrapper .projects {
+          float: left;
+          margin-right: -50em;
+          white-space: nowrap; } }
+      body article .portfolio .projects-wrapper .projects .single-project {
+        width: 95%;
+        height: 200px;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -361,24 +353,58 @@ body {
         flex-wrap: nowrap;
         justify-content: center;
         align-items: center;
-        visibility: hidden;
-        opacity: 0;
-        -webkit-transition: 0.3s ease-in-out;
-        -moz-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out; }
-        body article .portfolio .projects .single-project .show svg {
-          fill: #ffffff;
-          margin: 0 30px;
-          width: 30px;
-          height: 30px;
-          cursor: pointer; }
-          body article .portfolio .projects .single-project .show svg:hover {
-            fill: #34495e;
-            width: 50px;
-            height: 50px;
-            margin: 0 20px; }
+        box-shadow: 0 0 10px 1px #bdc3c7;
+        margin: 5px auto;
+        position: relative; }
+        @media (min-width: 425px) {
+          body article .portfolio .projects-wrapper .projects .single-project {
+            height: 250px;
+            width: 400px; } }
+        @media (min-width: 1024px) {
+          body article .portfolio .projects-wrapper .projects .single-project {
+            float: left;
+            margin: 0 10px; } }
+        body article .portfolio .projects-wrapper .projects .single-project img {
+          max-width: 95%;
+          max-height: 80%; }
+        body article .portfolio .projects-wrapper .projects .single-project:hover .show {
+          visibility: visible;
+          opacity: 1; }
+        body article .portfolio .projects-wrapper .projects .single-project .show {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(26, 188, 156, 0.8);
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          visibility: hidden;
+          opacity: 0;
+          -webkit-transition: 0.3s ease-in-out;
+          -moz-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out; }
+          body article .portfolio .projects-wrapper .projects .single-project .show svg {
+            fill: #ffffff;
+            margin: 0 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer; }
+            body article .portfolio .projects-wrapper .projects .single-project .show svg:hover {
+              fill: #34495e;
+              width: 50px;
+              height: 50px;
+              margin: 0 20px; }
   body article .portfolio .project-info {
     display: none;
+    visibility: hidden;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     z-index: 99999999;
@@ -507,7 +533,9 @@ body {
     background-color: #34495e; }
   body article .contact input {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    border-bottom-left-radius: 20px !important;
+    border-top-left-radius: 20px !important; }
   body article .contact input,
   body article .contact textarea {
     border: 0;
@@ -519,7 +547,7 @@ body {
     body article .contact textarea:focus {
       outline-color: #e74c3c; }
   body article .contact .contact-form {
-    margin: 2.5px 0; }
+    margin: 20px 0; }
   body article .contact .input {
     display: -webkit-box;
     display: -moz-box;
@@ -529,22 +557,32 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    height: 32px;
-    margin-bottom: 20px; }
+    height: 32px; }
   body article .contact textarea {
     resize: none;
     height: 150px;
-    width: 100%; }
+    width: 100%;
+    border-top-right-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  body article .contact .message {
+    margin-bottom: 0; }
   body article .contact button {
-    width: 32px;
+    width: 100%;
     height: 32px;
     background: none;
     border-radius: 0;
-    border: none; }
+    border: none;
+    background-color: #34495e;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 5px 0; }
     body article .contact button svg {
       height: 100%;
       height: 100%;
-      padding: 5px; }
+      padding: 0px; }
   body .skill-info {
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
@@ -618,5 +656,42 @@ body {
     body .skill-info p {
       font-size: 1.4rem;
       margin: 20px 30px; }
+  body footer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5E84AA;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    color: #ffffff; }
+    body footer .social {
+      list-style-type: none;
+      padding: 0; }
+      body footer .social .facebook-icon:hover svg {
+        fill: #4c66a4;
+        background-color: #ffffff;
+        border-radius: 3px; }
+      body footer .social .github-icon:hover svg {
+        fill: #6a006c;
+        background-color: #ffffff;
+        border-radius: 100%; }
+      body footer .social li {
+        display: inline;
+        margin-left: 5px;
+        cursor: pointer; }
+        body footer .social li svg {
+          fill: #ffffff;
+          width: 24px;
+          height: 24px; }
+    body footer p {
+      font-size: 1.1rem; }
 
 /*# sourceMappingURL=main.css.map */
