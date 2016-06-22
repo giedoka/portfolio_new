@@ -589,6 +589,8 @@ body {
                 border: 0;
                 padding: 5px;
                 margin: 0 auto;
+                border-radius: 0;
+                border: none;
                 &:focus {
                     outline-color: $orangeColor;
                 }
@@ -606,6 +608,16 @@ body {
                 resize: none;
                 height: 150px;
                 width: 100%;
+            }
+            button {
+                width: 32px;
+                height: 32px;
+                background: none;
+                border-radius: 0;
+                border: none;
+                svg {
+                    padding: 5px;
+                }
             }
         }
     }
