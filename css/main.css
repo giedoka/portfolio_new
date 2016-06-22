@@ -542,6 +542,8 @@ body {
     border-radius: 0;
     border: none; }
     body article .contact button svg {
+      height: 100%;
+      height: 100%;
       padding: 5px; }
   body .skill-info {
     background: rgba(0, 0, 0, 0.8);
