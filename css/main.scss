@@ -493,7 +493,7 @@ body {
             .project-info {
                 display: none;
                 //visibility: hidden;
-                background: rgba(0, 0, 0, .8);
+                background-color: rgba(0, 0, 0, .8);
                 position: fixed;
                 z-index: 99999999;
                 top: 0;
@@ -504,6 +504,16 @@ body {
                 justify-content: flex-start;
                 align-items: center;
                 @include transition(.3s, ease-in-out);
+                @media(min-width: 1024px) {
+                    background-color: $blackColor;
+                    width: 70%;
+                    height: 70%;
+                    top: 15%;
+                    left: 15%;
+                    flex-direction: row;
+                    justify-content: center;
+                    padding: 20px;
+                }
                 .close-btn {
                     position: absolute;
                     top: 0;
@@ -540,8 +550,13 @@ body {
                     width: 100%;
                     @include flexbox(row, nowrap);
                     justify-content: center;
+                    align-items: center;
                     @media(max-height: 360px) {
                         margin-top: 20px;
+                    }
+                    @media(min-width: 1024px) {
+                        margin-top: 0;
+                        height: 100%;
                     }
                     img {
                         width: 100%;
@@ -556,22 +571,32 @@ body {
                         }
                     }
                 }
-                h4,
-                p {
+                .description {
                     color: $whiteColor;
                     text-align: center;
-                }
-                h4 {
-                    font-size: 3rem;
-                    font-weight: 200;
-                    margin: 20px 0 0 0;
-                    @media(max-height: 360px) {
-                        margin-top: 10px;
+                    @media(min-width: 1024px) {
+                        text-align: left;
+                        margin: 20px 10px 0 20px;
                     }
-                }
-                p {
-                    font-size: 1.4rem;
-                    margin: 20px 30px;
+                    h4 {
+                        font-size: 3rem;
+                        font-weight: 200;
+                        margin: 20px 0 0 0;
+                        @media(max-height: 360px) {
+                            margin-top: 10px;
+                        }
+                        @media(min-width: 1024px) {
+                           margin-top: 0;
+                        }
+                    }
+                    p {
+                        font-size: 1.4rem;
+                        margin: 20px 30px;
+                        white-space: pre-wrap;
+                        @media(min-width: 425px) {
+                            margin: 20px 20% 0 0;
+                        }
+                    }
                 }
             }
         }
@@ -778,7 +803,7 @@ body {
                     svg {
                         fill: #4c66a4;
                         background-color: $whiteColor;
-                        border-radius: 3px;
+                        border-radius: 1.5px;
                     }
                 }
             }
@@ -788,6 +813,15 @@ body {
                         fill: #6a006c;
                         background-color: $whiteColor;
                         border-radius: 100%;
+                    }
+                }
+            }
+            .linkedin-icon {
+                &:hover {
+                    svg {
+                        fill: #0077b5;
+                        background-color: $whiteColor;
+                        border-radius: 2.5px;
                     }
                 }
             }

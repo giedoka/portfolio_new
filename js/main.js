@@ -14,8 +14,6 @@ var topLine = $('.top-line');
 var middleLine = $('.middle-line');
 var bottomLine = $('.bottom-line');
 
-var stars = [1, 2, 3, 4, 5]
-
 function openNav() {
     hamburger.click(function() {
         topLine.toggleClass('top-line-close');
