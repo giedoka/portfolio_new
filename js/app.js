@@ -13,7 +13,7 @@ var projects = [
             'img/projects/amoney/2.png',
             'img/projects/amoney/3.png'
         ],
-        info: 'saofnosifnpoafnpoawncopaecfsdaasdf'
+        info: 'Mój pierwszy komercyjny projekt. Przy jego tworzeniu współpracowałem z programistą zajmującym się back-endem za pośrednictwem systemu kontroli wersji - github.'
     },
     {
         name: 'Kappe',
@@ -23,7 +23,7 @@ var projects = [
             'img/projects/kappe/2.png',
             'img/projects/kappe/3.png'
         ],
-        info: 'saofnosifnpoafnpoawncopaecfsdaasdf'
+        info: 'Jeden z zakodowanych przeze mnie szablonów PSD.'
     },
     {
         name: 'System ekspercki',
@@ -32,7 +32,7 @@ var projects = [
             'img/projects/system-ekspercki/1.png',
             'img/projects/system-ekspercki/2.png'
         ],
-        info: 'saofnosifnpoafnpoawncopaecfsdaasdf'
+        info: 'Projekt stworzony jeszcze na początku nauki technologii webowych. Zaprojektowany na potrzebę zajęć na studiach. Jest to prosty system ekspercki, który doradza co zjeść.'
     }
 ]
 

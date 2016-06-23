@@ -49,7 +49,7 @@
         <article>
             <div class="container about">
                 <h2>O mnie</h2>
-                <p>Jestem absolwentem studiów informatycznych. Zagadnieniami związanymi z front-endem interesuję się od około pół roku. Moim marzeniem jest znalezienie pracy właśnie w tej dziedzinie, bo uwielbiam to robić.</p>
+                <p>Jestem absolwentem studiów informatycznych. Zagadnieniami związanymi z front-endem interesuję się od ponad pół roku. Moim aktualnym życiowym celem jest zdobywanie doświadczenia zawodowego w tej dziedzinie. Mam za sobą już pierwszy komercyjny projekt i mam nadzieję, że będzie ich więcej.</p>
             </div>
         
             <div class="skills">
@@ -103,9 +103,7 @@
                                     <div class="bar second-bar"></div>
                                 </div>
                                 <div class="project-slider">
-                                    <ul>
-                                        <li ng-repeat="image in project.images"><img ng-src="{{image}}" alt="Projekt"></li>
-                                    </ul>
+                                    <img ng-src="{{project.images[0]}}" alt="Projekt">
                                 </div>
                                 <h4>{{project.name}}</h4>
                                 <p>{{project.info}}</p>
@@ -153,12 +151,16 @@
                 <div class="bar second-bar"></div>
             </div>
             <div class="img-container">
-                <img src="" alt="logo">
+                <img class="skill-logo" src="" alt="logo">
             </div>
             <h4></h4>
-            <p>
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et lobortis dolor, ut fringilla ligula. Suspendisse potenti. Nullam in nisi et orci venenatis eleifend.
-            </p>
+            <div class="stars">
+                <img src="" alt="poziom">
+                <img src="" alt="poziom">
+                <img src="" alt="poziom">
+                <img src="" alt="poziom">
+                <img src="" alt="poziom">
+            </div>
         </aside>
         <footer>
             <ul class="social">
