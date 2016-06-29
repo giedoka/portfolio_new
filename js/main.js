@@ -52,7 +52,7 @@ function openAvatarNav() {
         }
         else {
             $('.avatar-nav').animate({
-                top: -160
+                top: -260
             },400);
         }
     });

@@ -155,7 +155,7 @@ body {
                     font-size: 1.6rem;
                     text-align: center;
                     padding: 10px 0;
-                    border-bottom: 1px solid;
+                    //border-bottom: 1px solid;
                     @media(max-width: 767px) {
                         &:last-child {
                             border-bottom: none;
@@ -172,7 +172,7 @@ body {
         }
         .avatar-nav {
             position: fixed;
-            top: -160px;
+            top: -260px;
             left: 0;
             width: 100%;
             display: none;
@@ -181,18 +181,64 @@ body {
             }
             
             &.move {
-                @include flexbox(column, nowrap);
+                @include flexbox(row, nowrap);
                 align-items: center;
-                @media(min-width: 768px) {
-                    flex-direction: row;
-                }
             }
             ul {
                 background-color: $turquoiseColor;
                 width: 100%;
                 z-index: 99999;
+                @include flexbox(column, wrap);
+                li {
+                    img {
+                        display: none;
+                    }
+                    @media(max-width: 767px) {
+                        height: 100px;
+                        box-shadow: 0 0 7px 0 #000000;
+                        margin: 5px;
+                        @include flexbox(column, nowrap);
+                        align-items: center;
+                        justify-content: center;
+                        &:hover {
+                            box-shadow: inset 0 0 7px 0 #000000;
+                        }
+                        img {
+                            display: block;
+                            width: 50px;
+                            height: 50px;
+                            margin: 0 auto;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+                &.left-nav {
+                    @media(max-width: 767px) {
+                        li {
+                            &:first-child {
+                                background-color: $darkBlueColor;
+                            }
+                        }
+                    }
+                }
+                &.right-nav {
+                    @media(max-width: 767px) {
+                        li {
+                            &:first-child {
+                                background-color: $greyColor;
+                                a {
+                                    color: $darkBlueColor;
+                                }
+                            }
+                            &:last-child {
+                                background-color: $orangeColor;
+                            }
+                        }
+                    }
+                }
                 @media(min-width: 768px) {
-                    @include flexbox(row, nowrap);
+                    flex-wrap: nowrap;
+                    flex-direction: row;
                     align-items: center;
                     justify-content: center;
                     text-align: center;
@@ -271,6 +317,7 @@ body {
                     margin: 0 auto;
                 }
                 li {
+                    box-shadow: inset 0 4px 2px -2px rgba(0, 0, 0, .6);
                     color: $darkBlueColor;
                     border-bottom-color: $darkBlueColor;
                     @media(min-width: 768px) {
