@@ -139,17 +139,46 @@ body {
       z-index: 99999; }
       @media (min-width: 768px) {
         body header .avatar-nav ul {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: center;
           text-align: center;
-          background-color: #34495e;
-          color: #ffffff; }
-          body header .avatar-nav ul li {
+          background-color: #34495e; } }
+  @media (min-width: 768px) and (min-width: 768px) {
+    body header .avatar-nav ul li {
+      display: inline-block;
+      border: none;
+      margin: 0 10px;
+      padding: 0;
+      border-bottom: 2px solid transparent; } }
+      @media (min-width: 768px) {
+          body header .avatar-nav ul li:hover {
+            border-bottom-color: #1abc9c; }
+          body header .avatar-nav ul li a {
+            display: block; } }
+    @media (min-width: 768px) and (min-width: 768px) {
+      body header .avatar-nav ul li a {
+        padding: 10px 5px; } }
+
+      body header .avatar-nav ul li a {
+        color: #ffffff;
+        text-decoration: none; }
+      body header .avatar-nav ul .nav-separator {
+        display: none; }
+        @media (min-width: 768px) {
+          body header .avatar-nav ul .nav-separator {
             display: inline-block;
-            margin: 0 10px; }
-            body header .avatar-nav ul li:hover {
-              border-bottom-color: #1abc9c; }
-            body header .avatar-nav ul li a {
-              color: #ffffff;
-              text-decoration: none; } }
+            width: 5px;
+            height: 5px;
+            background-color: #1abc9c;
+            border: none;
+            opacity: .5; } }
     body header .avatar-nav .avatar-wrapper {
       position: absolute;
       bottom: -100px;
@@ -205,11 +234,15 @@ body {
             body header .top-nav ul li a {
               padding: 10px 5px; } }
       body header .top-nav ul .nav-separator {
-        width: 5px;
-        height: 5px;
-        background-color: #1abc9c;
-        border: none;
-        opacity: .5; }
+        display: none; }
+        @media (min-width: 768px) {
+          body header .top-nav ul .nav-separator {
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: #1abc9c;
+            border: none;
+            opacity: .5; } }
   body article .about {
     text-align: center;
     margin-top: 150px; }

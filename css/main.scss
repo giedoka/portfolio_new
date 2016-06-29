@@ -192,22 +192,46 @@ body {
                 width: 100%;
                 z-index: 99999;
                 @media(min-width: 768px) {
+                    @include flexbox(row, nowrap);
+                    align-items: center;
+                    justify-content: center;
                     text-align: center;
                     background-color: $darkBlueColor;
-                    color: $whiteColor;
                     li {
-                        display: inline-block;
-                        margin: 0 10px;
+                        @media(min-width: 768px) {
+                            display: inline-block;
+                            border: none;
+                            margin: 0 10px;
+                            padding: 0;
+                            //margin-bottom: 2px;
+                            border-bottom: 2px solid transparent;
+                        }
                         &:hover {
                             border-bottom-color: $turquoiseColor;
                         }
                         a {
-                            color: $whiteColor;
-                            text-decoration: none;
+                            display: block;
                             @media(min-width: 768px) {
-                                //padding: 10px 5px;
+                                padding: 10px 5px;
                             }
                         }
+                    }
+                }
+                li {
+                    a {
+                        color: $whiteColor;
+                        text-decoration: none;
+                    }
+                }
+                .nav-separator {
+                    display: none;
+                    @media(min-width: 768px) {
+                        display: inline-block;
+                        width: 5px;
+                        height: 5px;
+                        background-color: $turquoiseColor;
+                        border: none;
+                        opacity: .5;
                     }
                 }
 
@@ -270,11 +294,15 @@ body {
                     }
                 }
                 .nav-separator {
-                    width: 5px;
-                    height: 5px;
-                    background-color: $turquoiseColor;
-                    border: none;
-                    opacity: .5;
+                    display: none;
+                    @media(min-width: 768px) {
+                        display: block;
+                        width: 5px;
+                        height: 5px;
+                        background-color: $turquoiseColor;
+                        border: none;
+                        opacity: .5;
+                    }
                 }
             }
             
