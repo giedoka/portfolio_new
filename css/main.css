@@ -110,6 +110,8 @@ body {
         @media (min-width: 768px) {
           body header nav ul li {
             border-bottom: 2px solid transparent; } }
+        body header nav ul li a {
+          padding: 10px 0; }
   body header .avatar-nav {
     position: fixed;
     top: -160px;
