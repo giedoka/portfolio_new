@@ -89,10 +89,10 @@ function showSkillInfo() {
         $('.skill-info h4').text(skillName);
         $('.skill-info').addClass('show');
         $('body').addClass('noScroll');
-        if(skillName == 'HTML5'){
+        if(skillName == 'HTML'){
             setStars(4);
         }
-        else if(skillName == 'CSS3'){
+        else if(skillName == 'CSS'){
             setStars(4);
         }
         else if(skillName == 'JavaScript'){
@@ -125,6 +125,9 @@ function setStars(starNum) {
 }
 function closeSkillInfo() {
     var closeBtn = $('.skill-info .close-btn');
+    $(document).keyup(function(e) {
+        if (e.keyCode === 27) closeBtn.click();
+    });
     closeBtn.click(function() {
         $('.skill-info').removeClass('show');
         $('body').removeClass('noScroll');

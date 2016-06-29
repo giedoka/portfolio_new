@@ -50,6 +50,9 @@ body {
         width: 25px;
         padding: 5px;
         margin: 0 auto;
+        @media(min-width: 768px) {
+            display: none;
+        }
         .line {
             @include transition(.7s, ease-in-out);
             margin: 6px 0;
@@ -153,8 +156,13 @@ body {
                     text-align: center;
                     padding: 10px 0;
                     border-bottom: 1px solid;
-                    &:last-child {
-                        border-bottom: none;
+                    @media(max-width: 767px) {
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                    @media(min-width: 768px) {
+                        border-bottom: 2px solid transparent;
                     }
                 }
             }
@@ -165,19 +173,41 @@ body {
             left: 0;
             width: 100%;
             display: none;
+            @media(min-width: 768px) {
+                top: 0;
+            }
             
             &.move {
                 @include flexbox(column, nowrap);
                 align-items: center;
+                @media(min-width: 768px) {
+                    flex-direction: row;
+                }
             }
             ul {
                 background-color: $turquoiseColor;
                 width: 100%;
                 z-index: 99999;
-                li {
+                @media(min-width: 768px) {
+                    text-align: center;
+                    background-color: $darkBlueColor;
                     color: $whiteColor;
-                    border-bottom-color: $whiteColor;
+                    li {
+                        display: inline-block;
+                        margin: 0 10px;
+                        &:hover {
+                            border-bottom-color: $turquoiseColor;
+                        }
+                        a {
+                            color: $whiteColor;
+                            text-decoration: none;
+                            @media(min-width: 768px) {
+                                //padding: 10px 5px;
+                            }
+                        }
+                    }
                 }
+
             }
             .avatar-wrapper {
                 position: absolute;
@@ -185,6 +215,10 @@ body {
                 left: calc(50% - 75px);
                 //top: -30px;
                 width: 150px;
+                @media(min-width: 768px) {
+                    z-index: 999999;
+                    bottom: -60px;
+                }
                 .hamburger {
                     position: absolute;
                     bottom: 35px;
@@ -200,12 +234,44 @@ body {
             width: 100%;
             ul {
                 display: none;
+                @media(min-width: 768px) {
+                    @include flexbox(row, nowrap);
+                    justify-content: center;
+                    align-items: center;
+                }
                 &.nav-open {
                     display: block;
+                    margin: 0 auto;
                 }
                 li {
                     color: $darkBlueColor;
                     border-bottom-color: $darkBlueColor;
+                    @media(min-width: 768px) {
+                        display: inline-block;
+                        border: none;
+                        margin: 0 10px;
+                        padding: 0;
+                        //margin-bottom: 2px;
+                        border-bottom: 2px solid transparent;
+                        &:hover {
+                            border-bottom-color: $orangeColor;
+                        }
+                    }
+                    a {
+                        display: block;
+                        color: $darkBlueColor;
+                        text-decoration: none;
+                        @media(min-width: 768px) {
+                            padding: 10px 5px;
+                        }
+                    }
+                }
+                .nav-separator {
+                    width: 5px;
+                    height: 5px;
+                    background-color: $turquoiseColor;
+                    border: none;
+                    opacity: .5;
                 }
             }
             
@@ -506,10 +572,10 @@ body {
                 @include transition(.3s, ease-in-out);
                 @media(min-width: 1024px) {
                     background-color: $blackColor;
-                    width: 70%;
-                    height: 70%;
-                    top: 15%;
-                    left: 15%;
+                    width: 80%;
+                    height: 80%;
+                    top: 8%;
+                    left: 8%;
                     flex-direction: row;
                     justify-content: center;
                     padding: 20px;
@@ -557,6 +623,7 @@ body {
                     @media(min-width: 1024px) {
                         margin-top: 0;
                         height: 100%;
+                        width: 50%;
                     }
                     img {
                         width: 100%;
@@ -568,6 +635,9 @@ body {
                         @media(min-width: 425px) and (min-height: 361px) {
                             height: 250px;
                             width: 400px;
+                        }
+                        @media(min-width: 1024px) {
+                            width: 100%;
                         }
                     }
                 }
