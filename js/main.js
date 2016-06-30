@@ -20,6 +20,7 @@ function openNav() {
         middleLine.toggleClass('middle-line-close');
         bottomLine.toggleClass('bottom-line-close');
         $('header nav ul').toggleClass('nav-open');
+        $('html').toggleClass('lock-scroll');
     });
 }
 
@@ -49,11 +50,13 @@ function openAvatarNav() {
             $('.avatar-nav').animate({
                 top: 0
             },400);
+            $('html').addClass('lock-scroll');
         }
         else {
             $('.avatar-nav').animate({
                 top: -260
             },400);
+            $('html').removeClass('lock-scroll');
         }
     });
 }
@@ -88,7 +91,7 @@ function showSkillInfo() {
         console.log(skillName);
         $('.skill-info h4').text(skillName);
         $('.skill-info').addClass('show');
-        $('body').addClass('noScroll');
+        $('html').addClass('lock-scroll');
         if(skillName == 'HTML'){
             setStars(4);
         }
@@ -130,7 +133,7 @@ function closeSkillInfo() {
     });
     closeBtn.click(function() {
         $('.skill-info').removeClass('show');
-        $('body').removeClass('noScroll');
+        $('html').removeClass('lock-scroll');
     });
 }
 
